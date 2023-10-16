@@ -1,14 +1,6 @@
 package jjfactory.ticket.product
 
-import org.springframework.stereotype.Repository
+import org.springframework.data.jpa.repository.JpaRepository
 
-@Repository
-class ProductRepository {
-    var seq : Long = 0L
-    val persistence : MutableMap<Long, Product> = HashMap()
-
-    fun save(product: Product){
-        product.assignId(seq++)
-        persistence.put(product.id, product)
-    }
+interface ProductRepository : JpaRepository<Product, Long>{
 }

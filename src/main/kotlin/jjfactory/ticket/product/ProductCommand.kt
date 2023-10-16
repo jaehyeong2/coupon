@@ -10,9 +10,9 @@ class ProductCommand
     ){
         fun toEntity(): Product {
             return Product(
-                name,
-                price,
-                discountPolicy
+                name = name,
+                price = price,
+                discountPolicy = discountPolicy
             )
         }
     }
