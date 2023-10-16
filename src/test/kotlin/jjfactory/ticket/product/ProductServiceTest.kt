@@ -12,7 +12,7 @@ class ProductServiceTest {
 
     @Test
     fun `상품 등록`() {
-        val command = ProductCommand("상품명", 20000, DiscountPolicy.NONE)
+        val command = ProductCommand.Create("상품명", 20000, DiscountPolicy.NONE)
         productService.addProduct(command.toEntity())
     }
 }

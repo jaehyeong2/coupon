@@ -1,15 +1,19 @@
 package jjfactory.ticket.product
 
-data class ProductCommand(val name: String,
-                          val price: Int,
-                          val discountPolicy: DiscountPolicy
-){
+class ProductCommand
 
-    fun toEntity(): Product {
-        return Product(
-            name,
-            price,
-            discountPolicy
-        )
+{
+    data class Create(
+        val name: String,
+        val price: Int,
+        val discountPolicy: DiscountPolicy
+    ){
+        fun toEntity(): Product {
+            return Product(
+                name,
+                price,
+                discountPolicy
+            )
+        }
     }
 }
